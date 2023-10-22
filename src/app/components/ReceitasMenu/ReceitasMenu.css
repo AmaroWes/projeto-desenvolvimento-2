@@ -1,0 +1,10 @@
+.receitas-menu {
+    width: 800px;
+    height: 80px;
+    display: flex;
+    border-bottom: 3px solid;
+    justify-content: end;
+    gap: 20px;
+    align-items: center;
+    padding: 20px;
+}

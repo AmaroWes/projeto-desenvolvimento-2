@@ -1,0 +1,13 @@
+.inventario-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.inventario-form-items {
+    display: flex;
+    flex-direction: column;
+    height: 450px;
+    overflow: auto;
+    gap: 10px;
+}

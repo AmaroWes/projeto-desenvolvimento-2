@@ -1,0 +1,22 @@
+.form-receitas-item {
+    display: flex;
+    width: 750px;
+    height: 75px;
+    gap: 20px;
+    padding: 20px;
+    margin-left: 10px;
+    background-color: #D1D2CA;
+    border-radius: 50px;
+    align-items: center;
+}
+
+.form-receitas-item div {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background-color: #609966;
+}
+
+.form-receitas-item p {
+    font-size: 18px;
+}

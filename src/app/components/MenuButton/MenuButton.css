@@ -1,0 +1,9 @@
+.menu-btn {
+    width: 260px;
+    height: 60px;
+    border-radius: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-weight: 500;
+}

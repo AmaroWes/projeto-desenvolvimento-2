@@ -1,0 +1,18 @@
+.container-menu {
+    width: 300px;
+    height: 780px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    border-radius: 50px;
+    position: relative;
+    left: 50px;
+    gap: 20px;
+    z-index: 2;
+}
+
+.container-menu h1 {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}

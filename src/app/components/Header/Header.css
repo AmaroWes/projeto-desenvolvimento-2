@@ -1,0 +1,14 @@
+.header-container {
+    display: flex;
+    height: 60px;
+    width: 300px;
+    border-radius: 50px;
+    position: relative;
+    left: 60%;
+    top: 10px;
+    padding: 10px;
+    text-align: center;
+    align-items: center;
+    justify-content: space-evenly;
+    z-index: 2;
+}
