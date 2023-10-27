@@ -13,7 +13,7 @@ const InventarioMenu = (props) => {
     return(
         <div className="inventario-menu" style={{borderColor: props.color.middlegreen}}>
             {listaItems.map((items) => {
-                return <InventarioMenuButton item={items} color={props.color} />
+                return <InventarioMenuButton key={items.nome} item={items} color={props.color} />
             })}
         </div>
     )

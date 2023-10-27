@@ -1,7 +1,10 @@
+'use client';
+
 import './globals.css'
 import { Header } from './components/Header'
 import { Menu } from './components/Menu'
 import { Aba } from './components/Aba'
+import { useState } from 'react'
 
 const colors = {
   darkgreen: '#40513B',
@@ -13,11 +16,17 @@ const colors = {
 }
 
 export default function Home() {
+  
+  const [screen, setScreen] = useState('Inventário');
+  const handlerScreen = (handler) => {
+    setScreen(handler)
+  }
+
   return (
     <main style={{backgroundColor: colors.lightgreen}}>
       <Header color={colors} />
-      <Menu color={colors} />
-      <Aba color={colors} subtitulo={'Receitas'} />
+      <Menu color={colors} handler={handlerScreen} />
+      <Aba color={colors} subtitulo={screen} />
     </main>
   )
 }

@@ -11,16 +11,16 @@ const AbaForm = (props) => {
         <div className="aba-form" style={{backgroundColor: props.color.lightgreen}}>
             {handler.map((item) => {
                 if (item == 'Inventário') {
-                    return <FormInventario color={props.color} />
+                    return <FormInventario key={item} color={props.color} />
                 } 
                 else if (item == 'Dashboard') {
-                    return <FormDashboard color={props.color} />
+                    return <FormDashboard key={item} color={props.color} />
                 }
                 else if (item == 'Relatório') {
-                    return <FormRelatorio color={props.color} />
+                    return <FormRelatorio key={item} color={props.color} />
                 }
                 else if (item == 'Receitas') {
-                    return <FormReceitas color={props.color} />
+                    return <FormReceitas key={item} color={props.color} />
                 }
             })}
         </div>

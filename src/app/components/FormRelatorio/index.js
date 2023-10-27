@@ -10,7 +10,7 @@ const FormRelatorio = (props) => {
                 <label htmlFor='extensoes'>Formato: </label>
                 <select id='extensoes' name='extensoes' style={{backgroundColor: props.color.lightgrey}}>
                     {opt.map((item) =>{
-                        return <option value={item}>{item}</option>
+                        return <option key={item} value={item}>{item}</option>
                     })}
                 </select>
             </form>

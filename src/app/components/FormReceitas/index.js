@@ -19,7 +19,7 @@ const FormReceitas = (props) => {
             <ReceitasMenu color={props.color} />
             <div className='receitas-form-item'>
                 {listaItems.map((item) => {
-                    return <FormReceitasItem item={item} />
+                    return <FormReceitasItem key={item.id} item={item} />
                 })}
             </div>
         </div>

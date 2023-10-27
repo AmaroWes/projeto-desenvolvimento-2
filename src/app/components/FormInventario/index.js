@@ -14,16 +14,15 @@ const listaItems = [
     {'id': 7, 'nome': 'Nome do produto','tipo': 'Uni', 'qtde': 10, 'grupo': 'Legume'}
 ]
 
-function gerarItems(item) {
-    return <FormInventarioItem item={item} />
-}
 
 const FormInventario = (props) => {
     return(
         <div className='inventario-form'>
             <InventarioMenu color={props.color} />
             <div className='inventario-form-items'>
-                {listaItems.map(gerarItems)}
+                {listaItems.map((item) => {
+                    return <FormInventarioItem key={item.id} item={item} />
+                })}
             </div>
         </div>
     )

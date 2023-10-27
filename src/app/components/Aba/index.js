@@ -3,6 +3,7 @@ import './Aba.css'
 
 
 const Aba = (props) => {
+
     return(
         <div className='container-aba' style={{backgroundColor: props.color.middlegreen}}>
             <h2 style={{color: props.color.white}}>{props.subtitulo}</h2>
