@@ -1,5 +1,7 @@
 import { FormInventarioItem } from '../FormInventarioItem'
 import { InventarioMenu } from '../InventarioMenu'
+import { useEffect, useState } from "react";
+import axios from "axios";
 import './FormInventario.css'
 
 
@@ -16,6 +18,20 @@ const listaItems = [
 
 
 const FormInventario = (props) => {
+
+    const [listaProdutos, setListaProdutos] = useState([]);
+
+    useEffect(() => {
+        axios.get("http://localhost:1337/api/produtos")
+            .then(function(response) {
+                setListaProdutos(response.data);
+            })
+    }, [])
+
+    for (const item of listaProdutos) {
+        console.log(item.attributo)
+    }
+
     return(
         <div className='inventario-form'>
             <InventarioMenu color={props.color} />

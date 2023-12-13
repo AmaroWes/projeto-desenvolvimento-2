@@ -1,3 +1,12 @@
+.dashboard {
+    align-items: center;
+    text-align: center;
+    margin: auto;
+    width: 100vw;
+    height: 100vh;
+    background-color: #EDF1D6;
+}
+
 .form-dashboard {
     display: flex;
     width: 90%;

@@ -3,10 +3,10 @@ import './InventarioMenu.css'
 
 
 const listaItems = [
-    {'nome': 'Criar'},
-    {'nome': 'Filtar'},
-    {'nome': 'Deletar'},
-    {'nome': 'Atualizar'}
+    {'nome': 'BTN1'},
+    {'nome': 'BTN2'},
+    {'nome': 'BTN3'},
+    {'nome': 'BTN4'}
 ]
 
 const InventarioMenu = (props) => {

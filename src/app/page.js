@@ -2,9 +2,11 @@
 
 import './globals.css'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Header } from './components/Header'
+import { FormDashboard } from './components/FormDashboard';
+import { FormInventario } from './components/FormInventario'
+import { FormReceitas } from './components/FormReceitas';
+import { FormRelatorio } from './components/FormRelatorio';
 import { Menu } from './components/Menu'
-import { Aba } from './components/Aba'
 import { useState } from 'react'
 
 const colors = {
@@ -17,17 +19,19 @@ const colors = {
 }
 
 export default function Home() {
-  
-  const [screen, setScreen] = useState('Inventário');
-  const handlerScreen = (handler) => {
-    setScreen(handler)
-  }
 
   return (
     <main style={{backgroundColor: colors.lightgreen}}>
-      <Header color={colors} />
-      <Menu color={colors} handler={handlerScreen} />
-      <Aba color={colors} subtitulo={screen} />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Menu color={colors} />}>
+            <Route index element={<FormInventario color={colors} />} />
+            <Route path="dashboard" element={<FormDashboard color={colors} />} />
+            <Route path="relatorio" element={<FormRelatorio color={colors} />} />
+            <Route path="receitas" element={<FormReceitas color={colors} />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </main>
   )
 }

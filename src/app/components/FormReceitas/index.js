@@ -1,5 +1,7 @@
 import { FormReceitasItem } from '../FormReceitasItem'
 import { ReceitasMenu } from '../ReceitasMenu'
+import { useEffect, useState } from "react";
+import axios from "axios";
 import './FormReceitas.css'
 
 
@@ -14,6 +16,7 @@ const listaItems = [
 ]
 
 const FormReceitas = (props) => {
+
     return(
         <div className='form-receitas'>
             <ReceitasMenu color={props.color} />

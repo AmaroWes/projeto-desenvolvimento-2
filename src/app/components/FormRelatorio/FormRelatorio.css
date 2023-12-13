@@ -1,7 +1,18 @@
+.relatorio {
+    align-items: center;
+    text-align: center;
+    margin: auto;
+    width: 100vw;
+    height: 100vh;
+    background-color: #EDF1D6;
+}
+
 .form-relatorio {
     display: flex;
-    width: 700px;
-    height: inherit;
+    width: 90%;
+    height: 90%;
+    margin: auto;
+    margin-top: 30px;
     align-items: center;
     text-align: center;
     justify-content: center;
