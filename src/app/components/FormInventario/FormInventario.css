@@ -10,7 +10,24 @@
 .inventario-form-items {
     display: flex;
     flex-direction: column;
-    height: 650px;
+    height: 50vh;
     overflow: auto;
     gap: 10px;
+    border-bottom: 3px solid #40513B;
+}
+
+.form-cadastro-produto {
+    font-size: 22px;
+    margin: auto;
+}
+
+.form-cadastro-produto > input {
+    font-size: 22px;
+    width: 30vw;
+    height: 40px;
+    text-align: center;
+    align-items: center;
+    color: black;
+    margin: 15px;
+    border-radius: 25px;
 }

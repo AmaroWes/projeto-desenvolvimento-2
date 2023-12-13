@@ -2,7 +2,7 @@
     width: 800px;
     height: 80px;
     display: flex;
-    border-bottom: 3px solid;
+    border-bottom: 3px solid #40513B;
     justify-content: end;
     gap: 20px;
     align-items: center;

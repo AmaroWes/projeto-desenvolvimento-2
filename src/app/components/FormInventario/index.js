@@ -5,21 +5,63 @@ import axios from "axios";
 import './FormInventario.css'
 
 
-const listaItems = [
-    {'id': 0, 'nome': 'Nome do produto','tipo': 'Uni', 'qtde': 10, 'grupo': 'Legume'},
-    {'id': 1, 'nome': 'Nome do produto','tipo': 'Uni', 'qtde': 10, 'grupo': 'Legume'},
-    {'id': 2, 'nome': 'Nome do produto','tipo': 'Uni', 'qtde': 10, 'grupo': 'Legume'},
-    {'id': 3, 'nome': 'Nome do produto','tipo': 'Uni', 'qtde': 10, 'grupo': 'Legume'},
-    {'id': 4, 'nome': 'Nome do produto','tipo': 'Uni', 'qtde': 10, 'grupo': 'Legume'},
-    {'id': 5, 'nome': 'Nome do produto','tipo': 'Uni', 'qtde': 10, 'grupo': 'Legume'},
-    {'id': 6, 'nome': 'Nome do produto','tipo': 'Uni', 'qtde': 10, 'grupo': 'Legume'},
-    {'id': 7, 'nome': 'Nome do produto','tipo': 'Uni', 'qtde': 10, 'grupo': 'Legume'}
-]
-
 
 const FormInventario = (props) => {
-
+    const listaItems = []
     const [listaProdutos, setListaProdutos] = useState([]);
+    const [nome, setNome] = useState("");
+    const [qtde, setQtde] = useState(0);
+
+    const cadastrarProduto = event => {
+        event.preventDefault();
+
+        axios.post("http://localhost:1337/api/produtos", {
+                "data": {
+                  "fornecedors": {
+                    "disconnect": [],
+                    "connect": [
+                      {
+                        "id": 1,
+                        "position": {
+                          "end": true
+                        }
+                      }
+                    ]
+                  },
+                  "grupos": {
+                    "disconnect": [],
+                    "connect": [
+                      {
+                        "id": 1,
+                        "position": {
+                          "end": true
+                        }
+                      }
+                    ]
+                  },
+                  "tipos": {
+                    "disconnect": [],
+                    "connect": [
+                      {
+                        "id": 1,
+                        "position": {
+                          "end": true
+                        }
+                      }
+                    ]
+                  },
+                  "Name": nome,
+                  "Quantidade": qtde,
+                  "Validade": "2023-10-27"
+                }
+        }).then((response) => { 
+            alert("Produto cadastrado com sucesso!");
+            setNome(""); 
+            setPreco(0);
+    
+        }).catch(err => console.log(err))
+
+    }
 
     useEffect(() => {
         axios.get("http://localhost:1337/api/produtos")
@@ -28,18 +70,38 @@ const FormInventario = (props) => {
             })
     }, [])
 
-    for (const item of listaProdutos) {
-        console.log(item.attributo)
+    if (listaProdutos.data === undefined) {
+        console.log('Here')
+    } else {
+        listaProdutos.data.map(item => {
+            console.log(item.id)
+            console.log(item.attributes)
+            let produto = {
+                'id': item.id,
+                'nome': item.attributes.Name,
+                'qtde': item.attributes.Quantidade
+            }
+            listaItems.push(produto)
+        })
     }
-
+    
     return(
         <div className='inventario-form'>
             <InventarioMenu color={props.color} />
             <div className='inventario-form-items'>
                 {listaItems.map((item) => {
-                    return <FormInventarioItem key={item.id} item={item} />
+                    return <FormInventarioItem key={item.nome} item={item} />
                 })}
             </div>
+            <form className='form-cadastro-produto' onSubmit={cadastrarProduto}>
+                <label htmlFor="nome">Nome:</label>
+                <input type="text" name="nome" value={nome} onChange={(ev) => setNome(ev.target.value)}></input>
+                <br />
+                <label htmlFor="qtde">Qtde:</label>
+                <input type="number" name="qtde" value={qtde} onChange={(ev) => setQtde(ev.target.value)}></input>
+                <br />
+                <input style={{backgroundColor: '#609966'}} type="submit"></input>
+            </form>
         </div>
     )
 }
