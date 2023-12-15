@@ -13,16 +13,16 @@ const Menu = (props) => {
                         <Link to="/">Inventário</Link>
                     </li>
                     <li className="menu-btn">
+                        <Link to="/receitas">Receitas</Link>
+                    </li>
+                    <li className="menu-btn">
                         <Link to="/dashboard">Dashboard</Link>
                     </li>
                     <li className="menu-btn">
                         <Link to="/relatorio">Relatório</Link>
                     </li>
                     <li className="menu-btn">
-                        <Link to="/receitas">receitas</Link>
-                    </li>
-                    <li className="menu-btn">
-                        <Link to="/receitas">configuração</Link>
+                        <Link to="/">Configuração</Link>
                     </li>
                 </ul>
             </div>

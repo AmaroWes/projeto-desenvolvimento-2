@@ -10,10 +10,11 @@
 .inventario-form-items {
     display: flex;
     flex-direction: column;
-    height: 50vh;
+    height: 65vh;
     overflow: auto;
     gap: 10px;
     border-bottom: 3px solid #40513B;
+    margin-top: 30px;
 }
 
 .form-cadastro-produto {

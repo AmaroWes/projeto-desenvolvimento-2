@@ -50,9 +50,8 @@ const FormInventario = (props) => {
                       }
                     ]
                   },
-                  "Name": nome,
-                  "Quantidade": qtde,
-                  "Validade": "2023-10-27"
+                  "Nome": nome,
+                  "Qtde": qtde
                 }
         }).then((response) => { 
             alert("Produto cadastrado com sucesso!");
@@ -78,8 +77,8 @@ const FormInventario = (props) => {
             console.log(item.attributes)
             let produto = {
                 'id': item.id,
-                'nome': item.attributes.Name,
-                'qtde': item.attributes.Quantidade
+                'nome': item.attributes.Nome,
+                'qtde': item.attributes.Qtde
             }
             listaItems.push(produto)
         })
@@ -87,7 +86,6 @@ const FormInventario = (props) => {
     
     return(
         <div className='inventario-form'>
-            <InventarioMenu color={props.color} />
             <div className='inventario-form-items'>
                 {listaItems.map((item) => {
                     return <FormInventarioItem key={item.nome} item={item} />
